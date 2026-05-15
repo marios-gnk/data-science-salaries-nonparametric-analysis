@@ -71,7 +71,7 @@ The project included applications of:
 ## Notes 
 - All analysis and interpretation are contained directly in the analysis.R script via detailed comments.
 - No external report was produced; the script itself serves as a full analytical write-up.
-- All the figures have been extracted and can be seen in the figures file.
+- All the figures have been extracted and made available in the figures directory.
 
 
 
