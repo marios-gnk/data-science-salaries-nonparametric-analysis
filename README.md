@@ -63,10 +63,15 @@ The project included applications of:
 
 ## Key Findings 
 - Salaries in the US are stochastically greater than in Great Britain.
+![ ](figures/US_vs_GB_salary.png)
 - Company size significantly affects salaries, especially for mid-level data scientists.
+![ ](figures/mid_level_salary_by_comp_size.png)
 - Entry-level salaries in US/GB are better approximated by a Log-Normal distribution than a Gamma distribution
+![ ](figures/entry_level_salary_distribution.png)
 - No statistically significant change was detected in average salaries between 2023 and 2024.
+![ ](figures/salary_difference.png)
 - Salary distributions differ significantly across experience levels and company sizes.
+
 
 ## Notes 
 - All analysis and interpretation are contained directly in the analysis.R script via detailed comments.
