@@ -1,5 +1,4 @@
 # Data Science Salaries - Non-Parametric Statistical Analysis (R)
-Non-parametric statistical analysis of data science salaries using R
 ## Overview
 This repository contains an academic project completed as part of the course **Non-Parametric Statistics**.
 
