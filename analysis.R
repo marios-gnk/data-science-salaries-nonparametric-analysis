@@ -2,6 +2,13 @@
 # Assignment: Data Science Salaries                                         ----
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+library(ggplot2)
+library(dplyr)
+library(KScorrect)
+library(kSamples)
+library(moments)
+library(coin)
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Introduction
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,6 +47,7 @@ head(df)
 
 # We use the factor() command to turn the exp_level variable into an ordered
 # factor (EN < MI < SE < EX).
+
 df$exp_level <- factor(df$exp_level,
                        levels = c("EN", "MI", "SE", "EX", ordered = TRUE))
 df$comp_size <- factor(df$comp_size, levels = c("S", "M", "L"), ordered = TRUE)
@@ -62,7 +70,6 @@ table(df$comp_size)
 # from the US is substantially large. Hence, in order to reduce noise we
 # restrict our graphical analysis to the full-time employees in the US.
 
-library(ggplot2)
 ggplot(df[df$comp_loc == "US" & df$emp_type == "FT", ],
        aes(x = year, y = salary, group = year))+
   geom_boxplot()+
@@ -115,7 +122,7 @@ text(x = 190, y = 0.5, "US", col = "blue")
 
 # To assess the validity of the previous claim, we perfom the Kolmogorov-Smirnov
 # test.
-library(dplyr)
+
 USvsGB <- filter(df23, comp_loc == "US" | comp_loc == "GB")
 ks.test(salary ~ comp_loc, alternative = "greater", data = USvsGB)
 
@@ -162,11 +169,12 @@ salary_US_GB_EN <- USvsGB$salary[USvsGB$exp_level == "EN"]
 hist(salary_US_GB_EN, freq = F,
      main = "Histogram of entry-level data scientists' salary in the US and GB",
      xlab = "Thousands of $")
-library(KScorrect)
+
 Lillie_gamma <- LcKS(salary_US_GB_EN, "pgamma", parallel = T)
 Lillie_lnorm <- LcKS(salary_US_GB_EN, "plnorm", parallel = T)
 Lillie_gamma$p.value
 Lillie_lnorm$p.value
+
 # 1st test's result: The null hypothesis that the distribution is part of the
 # Gamma distribution family is rejected in the 0.01 level of significance, since
 # the p-value is less than 0.01.
@@ -196,7 +204,7 @@ chisq.test(O)
 
 # Are mid-level (MI) data scientists worldwide paid the same no matter the
 # company size, for the year 2023?
-library(kSamples)
+
 df23_MIlvl <- df23[df23$exp_level == "MI", ]
 kSamples::ad.test(salary ~ comp_size, method = "asymptotic", data = df23_MIlvl)
 
@@ -206,6 +214,7 @@ kSamples::ad.test(salary ~ comp_size, method = "asymptotic", data = df23_MIlvl)
 
 # We now perform appropriate tests to find out what is the size of the
 # companies whose employees are paid more.
+
 ggplot(df23_MIlvl, aes(comp_size, salary))+
   geom_boxplot()+
   labs(title = "Salaries of mid-level data scientists by company size",
@@ -215,10 +224,12 @@ ggplot(df23_MIlvl, aes(comp_size, salary))+
 # increases as company size increases, as expected. To check if the difference
 # in medians between each size is statistically significant, we perform
 # one-sided Mann-Whitney tests for every pair of sizes.
+
 wilcox.test(df23_MIlvl$salary[df23_MIlvl$comp_size == "S"],
             df23_MIlvl$salary[df23_MIlvl$comp_size == "M"],
             exact = F, paired = F, correct = T,
             alternative = "less")
+
 # The p-value is very small, indicating that the median salary of mid-level
 # data scientists in medium-sized companies is significantly higher than in
 # small companies.
@@ -261,7 +272,6 @@ salarydiff <- salary2023 - salary2024
 hist(salarydiff, freq = F,
      main = "Distribution of differences in salary of corresponding countries",
      xlab = "differences in salary", breaks = 30)
-library(moments)
 skewness(salarydiff)
 
 # The skewness of the distribution is high (by absolute value), hence we
@@ -269,7 +279,6 @@ skewness(salarydiff)
 # signed-rank test cannot be performed. We use the general sign test instead
 # which is quite similar without the need of the symmetry assumption.
 
-library(coin)
 mean_salaries <- data.frame(salary2023, salary2024)
 sign_test(salary2023 ~ salary2024, data = mean_salaries,
           distribution = "approximate", p = 0.5, alternative = "two.sided")
