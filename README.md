@@ -80,7 +80,7 @@ The project included applications of:
 3. Install the required packages:
 
 ```r
-install.packages(c("ggplot2", dplyr, KScorrect, kSamples, moments, coin))
+install.packages(c("ggplot2", "dplyr", "KScorrect", "kSamples", "moments", "coin"))
 ```
 4. Run the script:
 
