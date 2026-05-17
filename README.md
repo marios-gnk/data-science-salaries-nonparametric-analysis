@@ -71,11 +71,34 @@ The project included applications of:
 ![ ](figures/salary_difference.png)
 - Salary distributions differ significantly across experience levels and company sizes.
 
+## How to Run
+
+1. Clone or download this repository.
+
+2. Open `DataSalaries.Rproj` in RStudio.
+
+3. Install the required packages:
+
+```r
+install.packages(c("ggplot2", dplyr, KScorrect, kSamples, moments, coin))
+```
+4. Run the script:
+
+```r
+source("analysis.R") 
+```
 
 ## Notes 
-- All analysis and interpretation are contained directly in the analysis.R script via detailed comments.
-- No external report was produced; the script itself serves as a full analytical write-up.
-- All the figures have been extracted and made available in the figures folder.
+- All analysis and interpretation are contained directly in the `analysis.R` script via detailed comments.
+- No external report was produced. The script itself serves as a full analytical write-up.
+
+## Author
+
+Marios Giannakopoulos  
+Department of Mathematics  
+National and Kapodistrian University of Athens
+
+
 
 
 
