@@ -81,10 +81,6 @@ ggplot(df[df$comp_loc == "US" & df$emp_type == "FT", ],
   facet_wrap(~comp_size)+
   labs(title = "Salary (in thousands of $) of FT data scientists in US, by company size")
 
-
-
-
-
 # We want to focus in a single year, 2023, to avoid having dependent
 # observations in the data set (it would be bold to assume that John's salary
 # for 2021 is independent from his salary in 2022, 2023, and 2024).
