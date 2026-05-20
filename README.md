@@ -1,7 +1,7 @@
 # Data Science Salaries - Non-Parametric Statistical Analysis (R)
 This repository contains an academic project completed as part of the course **Non-Parametric Statistics**.
 ## 📖 Overview
-This project explores salary patterns in the data science job market using real-world data from 2020-2024 through the application of non-parametric statistical methods, including empirical distribution functions and non-parametric hypothesis tests.
+This project explores salary patterns in the data science job market using real-world data from 2020-2024 through the application of non-parametric statistical methods, including empirical cumulative distribution functions and non-parametric hypothesis tests.
 
 The goal is to investigate how salaries vary across:
 
