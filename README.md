@@ -93,8 +93,10 @@ source("analysis.R")
 
 ## 👨‍💻 Author
 
-Marios Giannakopoulos  
-Department of Mathematics  
+**Marios Giannakopoulos**
+
+Department of Mathematics 
+
 National and Kapodistrian University of Athens
 
 
