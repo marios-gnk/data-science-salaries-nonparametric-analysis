@@ -11,6 +11,8 @@ The goal is to investigate how salaries vary across:
 - employment types
 - years
 
+---
+
 ## 🗂️ Dataset
 The dataset is sourced from ai-jobs.net and can be downloaded from kaggle.com:
 [Latest Data Science Job Salaries (2024) - Kaggle](https://www.kaggle.com/datasets/saurabhbadole/latest-data-science-job-salaries-2024)
@@ -26,6 +28,8 @@ It contains structured information on data science salaries including:
 
 Additionally, a secondary dataset is used for country-based average salaries (2023 vs 2024).
 
+---
+
 ## 📋 Research Questions
 This analysis addresses the following statistical questions:
 
@@ -35,6 +39,8 @@ This analysis addresses the following statistical questions:
 - Do mid-level salaries depend on company size?
 - Have average salaries changed between 2023 and 2024?
 - How strongly are salaries correlated across consecutive years?
+
+---
 
 ## 📈 Statistical Methods Used
 The project included applications of: 
@@ -49,6 +55,8 @@ The project included applications of:
 - goodness-of-fit tests
 - Exploratory data visualization
 
+---
+
 ## ⚙️ Tools and Technologies Used
 - R
 - RStudio
@@ -58,6 +66,8 @@ The project included applications of:
 - KScorrect
 - coin
 - moments
+
+---
 
 ## 📊 Key Findings 
 - Salaries in the US are stochastically greater than in Great Britain.
@@ -69,6 +79,8 @@ The project included applications of:
 - No statistically significant change was detected in average salaries between 2023 and 2024.
 ![ ](figures/salary_difference.png)
 - Salary distributions differ significantly across experience levels and company sizes.
+
+---
 
 ## ▶️ How to Run
 
@@ -87,9 +99,13 @@ install.packages(c("ggplot2", "dplyr", "KScorrect", "kSamples", "moments", "coin
 source("analysis.R") 
 ```
 
+---
+
 ## ✍️ Notes 
 - All analysis and interpretation are contained directly in the `analysis.R` script via detailed comments.
 - No external report was produced. The script itself serves as a full analytical write-up.
+
+---
 
 ## 👨‍💻 Author
 
