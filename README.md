@@ -102,7 +102,8 @@ source("analysis.R")
 ---
 
 ## ✍️ Notes 
-- All analysis and interpretation are contained directly in the `analysis.R` script via detailed comments.
+
+- All analysis and interpretation are contained directly in the `analysis.R` script through detailed comments.
 - No external report was produced. The script itself serves as a full analytical write-up.
 
 ---
